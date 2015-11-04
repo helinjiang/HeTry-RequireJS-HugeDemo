@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>page1.html</title>
+    <script data-main="./dist/js/page/page1" src="./dist/js/lib/require.js"></script>
+</head>
+<body>
+    <h1>这里是page1.html</h1>
+    <p>本页面将引用jQuery，然后操作DOM。</p>
+    <p>注意使用jQuery时可以自己传入参数从而使用局部变量，也可以省略，从而使用全局的$。这是因为jQuery自己注册了全局变量$和jQuery的缘故，<a
+            href="http://requirejs.org/docs/jquery.html#globalvars" target="_blank">更多信息点击此处</a>。</p>
+    <pre><code>
+        requirejs(['../common'], function (common) {
+
+            // 依赖数组中引入jquery
+            requirejs(['jquery'], function ($) {
+                $(function () {
+                    $("#testdiv").text("我是自动生成的！");
+                });
+            });
+
+        });
+    </code></pre>
+    <h2>输出</h2>
+    <div id="testdiv"></div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>page3.html</title>
+    <script data-main="./dist/js/page/page3" src="./dist/js/lib/require.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>这里是page3.html</h1>
+    <p>本页面将引用jQuery，并按需加载Bootstrap，包括其js和css文件。当然这么做是有前提的，如果所有页面都使用Bootstrap，我们还是推荐直接在head中使用link加载样式文件。因为动态加载意味着可能会由于网络加载而导致页面出现“闪动”。你可以在本页中不停按F5刷新页面感受下！</p>
+    <p>我们使用了 <a href="https://github.com/guybedford/require-css" target="_blank">require-css</a> 来做样式模块加载，具体使用方法可以参考 <a
+            href="http://segmentfault.com/a/1190000002390643" target="_blank">RequireJS按需加载样式文件</a></p>
+</div>
+
+<div class="container">
+    <h2>示例</h2>
+    <p>以下DOM将被渲染为tab</p>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">home...</div>
+        <div role="tabpanel" class="tab-pane" id="profile">profile...</div>
+        <div role="tabpanel" class="tab-pane" id="messages">messages...</div>
+        <div role="tabpanel" class="tab-pane" id="settings">settings...</div>
+    </div>
+
+</div>
+
+<div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>在加载完Bootstrap之后，我将自动弹出模态框</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

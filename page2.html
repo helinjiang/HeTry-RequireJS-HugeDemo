@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>page2.html</title>
+    <script data-main="./dist/js/page/page2" src="./dist/js/lib/require.js"></script>
+</head>
+<body>
+    <h1>这里是page2.html</h1>
+    <p>本页面将引用jQuery的两个插件。注意由于在shim中配置了依赖，因此依赖数组中可以不加"jquery"，RequireJS会自动处理好依赖。</p>
+    <p>如果几乎所有的模块都依赖于jQuery，则建议使用map来配置依赖。具体 <a href="http://requirejs.org/docs/jquery.html#noconflictmap" target="_blank">查看此处</a><p/>
+
+    <pre><code>
+        requirejs(['../common'], function (common) {
+
+            // 由于在shim中配置了依赖，因此依赖数组中可以不加"jquery"
+            requirejs(["jquery.alpha", "jquery.beta"], function () {
+                $(function () {
+                    $('body').alpha().beta();
+                });
+            });
+
+        });
+    </code></pre>
+    <h2>输出</h2>
+    <div id="testdiv"></div>
+</body>
+</html>
